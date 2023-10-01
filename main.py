@@ -75,17 +75,11 @@ def solveSudoku(matrix, row, col):
 if __name__ == "__main__":
 
     # Grid Matrix (# 0 means unassigned cells)
-    matrix = [
-        [6, 9, 0, 4, 0, 5, 0, 0, 0],
-        [0, 0, 1, 0, 0, 0, 6, 0, 3],
-        [0, 0, 0, 0, 6, 0, 0, 0, 0],
-        [9, 0, 0, 0, 1, 3, 7, 5, 0],
-        [0, 3, 0, 0, 0, 0, 1, 8, 0],
-        [0, 6, 8, 5, 7, 0, 0, 0, 9],
-        [0, 0, 0, 0, 5, 0, 0, 0, 0],
-        [8, 0, 7, 0, 0, 0, 3, 0, 0],
-        [0, 0, 0, 7, 0, 8, 0, 9, 1]
-    ]
+    matrix = []
+    for i in range(9):
+        row = input(f"Enter row {i+1}: ")
+        row = [int(num) for num in row]
+        matrix.append(row)
 
     if (solveSudoku(matrix, 0, 0)):
         printMatrix(matrix)
